@@ -1,19 +1,14 @@
-server:
-  port: 8082  # or any other available port
-
 spring:
   datasource:
-    username: pet_parks
-    password: pet_parks
     url: jdbc:mysql://localhost:3306/pet_parks
-    
+    username: root
+    password: legacy
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
-       ddl-auto: create
+      ddl-auto: create
     show-sql: true
-    defer-datasource-initialization: true
-  sql:
-    init:  
-     mode: always    
-       
-       
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
